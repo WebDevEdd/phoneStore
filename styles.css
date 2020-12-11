@@ -14,12 +14,14 @@
     position: fixed;
     width: 100%;
     z-index: 1;
+    flex-direction: column;
 }
 .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 90%;
+    position: relative;
 }
 #nav-logo{
     color: rgb(255, 255, 255);
@@ -40,6 +42,22 @@
 }
 .cart-btn{
     color: white;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.cart{
+    background-color: rgb(24, 24, 24);
+    height: 800px;
+    width: 600px;
+    position: fixed;
+    top: 100px;
+    right: 40px;
+    transform: translateX(120%);
+    transition: 0.5s ease;
+}
+.cart-toggle{
+    transform: translateX(0);
 }
 
 /* ######## HOME SECTION ####### */

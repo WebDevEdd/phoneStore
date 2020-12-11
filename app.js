@@ -12,3 +12,13 @@ function phoneImageScroll(){
     })
 }
 phoneImageScroll();
+
+function cartAppear(){
+    const cartbtn = document.querySelector('.cart-btn');
+    const cart = document.querySelector('.cart');
+
+    cartbtn.addEventListener('click', function(){
+        cart.classList.toggle('cart-toggle');
+    })
+}
+cartAppear();
