@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 /* ######## NAV SECTION ####### */
 .nav-container{
     background-color: rgb(24, 24, 24);
@@ -15,6 +18,9 @@
     width: 100%;
     z-index: 1;
     flex-direction: column;
+}
+.nav-logo-container{
+    width: 100%;
 }
 .navbar{
     display: flex;
@@ -34,18 +40,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
-.nav-links li a{
-    margin: 20px;
+.nav-links li{
     text-decoration: none;
     color: white;
+    margin: 20px;
+    cursor: pointer;
+}
+.nav-links li:hover{
+    color: crimson;
 }
 .cart-btn{
     color: white;
     cursor: pointer;
     font-size: 24px;
 }
-
+.cart-btn span{
+    color: crimson;
+}
+.cartbtn{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
 .cart{
     background-color: rgb(24, 24, 24);
     height: 800px;
@@ -55,9 +73,60 @@
     right: 40px;
     transform: translateX(120%);
     transition: 0.5s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.cart-title{
+    color: white;
+    font-size: 48px;
+    text-align: center;
 }
 .cart-toggle{
     transform: translateX(0);
+}
+.cart-items-title{
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 100;
+}
+.cart-items-list{
+    width: 500px;
+    height: 500px;
+    background-color: rgb(34, 34, 34);
+}
+.total{
+    font-size: 32px;
+    color: white;
+}
+#checkoutbtn{
+    border: none;
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.cart-item{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-item-img{
+    height: 120px;
+}
+.cart-item-name{
+    font-size: 32px;
+    color: white;
+}
+.cart-item-price{
+    font-size: 24px;
+    color: white;
 }
 
 /* ######## HOME SECTION ####### */
@@ -98,4 +167,94 @@
 .product-section{
     height: 100vh;
     width: 100%;
+    background-color: rgb(155, 232, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    perspective: 1000px;
+}
+.products-title{
+    color: crimson;
+    text-align: center;
+    font-size: 64px;
+    font-weight: 900;
+}
+.product-container{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.product-card-container{
+    width: 400px;
+    height: 600px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+.product-card{
+    width: 400px;
+    height: 600px;
+    background-color: rgb(59, 59, 59);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 0px 11px 20px -2px rgba(0,0,0,0.53); 
+    box-shadow: 0px 11px 20px -2px rgba(0,0,0,0.53);
+    
+}
+.product-title{
+    color: white;
+    text-align: center;
+}
+.product-img{
+    width: 300px;
+    z-index: 1;
+}
+.product-price{
+    font-size: 50px;
+    font-weight: bold;
+    color: aliceblue;
+}
+.add-to-cart{
+    border: none;
+    background-color: crimson;
+    padding: 5px 20px;
+    margin: 10px;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    font-weight: 200;
+    cursor: pointer;
+}
+.background{
+    width: 250px;
+    height: 250px;
+    background: rgb(249,168,255);
+    background: linear-gradient(180deg, rgba(249,168,255,1) 0%, rgba(250,255,86,1) 33%, rgba(102,175,255,1) 66%, rgba(255,88,88,1) 100%);
+    position: absolute;
+    border-radius: 150px;
+}
+
+.product-card:hover .product-img{
+    transform: translateZ(100px);
+    transition: 0.5s ease;
+}
+.product-card:hover .product-title{
+    transform: translateZ(80px);
+    transition: 0.5s ease;
+}
+.product-card:hover .product-price{
+    transform: translateZ(80px);
+    transition: 0.5s ease;
+}
+.product-card:hover .add-to-cart{
+    transform: translateZ(80px);
+    transition: 0.5s ease;
 }

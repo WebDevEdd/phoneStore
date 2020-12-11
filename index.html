@@ -10,22 +10,41 @@
     <title>Phone Store</title>
 </head>
 <body>
-    <!-- ######## NAVBAR ######### -->
+    <!-- ######## NAVBAR AND CART ######### -->
     <nav class="nav-container">
         <div class="navbar">
             <!-- NAV Logo -->
-            <h1 id="nav-logo">
-                Phone <span>Store.</span>
-            </h1>
+            <div class="nav-logo-container">
+                <h1 id="nav-logo">
+                    Phone <span>Store.</span>
+                </h1>
+            </div>
             <!--  Nav Links -->
             <ul class="nav-links">
-                <li><a href="" id="home-btn">Home</a></li>
-                <li><a href="" id="products-btn">Products</a></li>
+                <li id="home-btn">Home</li>
+                <li id="products-btn">Products</li>
             </ul>
             <!-- Cart Button -->
-            <i class="fas fa-shopping-cart cart-btn"></i>
+            <div class="cartbtn">
+                <i class="fas fa-shopping-cart cart-btn"><span> 0</span></i>
+            </div>
+            
         </div>
+        <!-- Cart -->
         <div class="cart">
+            <h1 class="cart-title">
+                Cart
+            </h1>
+            <h2 class="cart-items-title">
+                You have <span id="num-of-items">0</span> items in cart
+            </h2>
+            <div class="cart-items-list">
+                
+            </div>
+            <p class="total">$0.00</p>
+            <button id="checkoutbtn">
+                Check Out
+            </button>
         </div>
     </nav>
 
@@ -41,7 +60,56 @@
     </section>
     <!-- ###### PRODUCT SECTION ###### -->
     <section class="product-section">
-
+        <h1 class="products-title">
+            Products
+        </h1>
+        <div class="product-container">
+            <div data-tilt data-tilt-max="8"  class="product-card-container">
+                <div class="product-card" id="black-card">
+                    <h2 class="product-title">
+                        iPhone 11 Black
+                    </h2>
+                    <img src="images/blackiphone.png" alt="" class="product-img">
+                    <h2 class="product-price">
+                        799.99
+                    </h2>
+                    <button class="add-to-cart cart1">
+                        Add to cart
+                    </button>
+                    <div class="background"></div>
+                </div>
+            </div>
+            <div data-tilt data-tilt-max="8" class="product-card-container">
+                <div  class="product-card" id="blue-card">
+                    <h2 class="product-title">
+                        iPhone 11 Blue
+                    </h2>
+                    <img src="images/blueiphone.png" alt="" class="product-img">
+                    <h2 class="product-price">
+                        899.99
+                    </h2>
+                    <button class="add-to-cart cart2">
+                        Add to cart
+                    </button>
+                    <div class="background"></div>
+                </div>
+            </div>
+            <div data-tilt data-tilt-max="8"  class="product-card-container">
+                <div class="product-card" id="red-card">
+                    <h2 class="product-title">
+                        iPhone 11 Red
+                    </h2>
+                    <img src="images/rediphone.png" alt="" class="product-img">
+                    <h2 class="product-price">
+                        999.99
+                    </h2>
+                    <button class="add-to-cart cart3">
+                        Add to cart
+                    </button>
+                    <div class="background"></div>
+                </div>
+        </div>
+        </div>
     </section>
 <script src="app.js"></script>
 </body>
