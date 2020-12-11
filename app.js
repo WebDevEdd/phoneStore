@@ -557,9 +557,14 @@ function addToCart(){
   cartButtons.push(cart1);
   cartButtons.push(cart2);
   cartButtons.push(cart3);
+  //counter for number of items in cart
+  itemCounter = 0;
+  itemCounter2 = 0;
   
   cartButtons.forEach(function(e){
     e.addEventListener('click', function(){
+      itemCounter++;
+      itemCounter2++;
       //collect card information
       const parent = e.parentElement;
       const cardTitle = parent.firstElementChild.innerHTML;
@@ -572,24 +577,55 @@ function addToCart(){
       const newListItemImg = document.createElement('img');
       const newListItemName = document.createElement('h2');
       const newListItemPrice = document.createElement('h3');
+      const removeItem = document.createElement('button');
       //add class list
       newListItemPrice.classList.add('cart-item-price');
       newListItem.classList.add('cart-item');
       newListItemName.classList.add('cart-item-name');
       newListItemImg.classList.add('cart-item-img');
+      removeItem.classList.add('removebtn');
       //add attribute and inner html
       newListItemImg.setAttribute('src', cardImg);
       newListItemName.innerHTML = cardTitle;
       newListItemPrice.innerHTML = cardPrice;
+      removeItem.innerHTML = 'x';
+      
       //append children
       itemsList.appendChild(newListItem);
       newListItem.appendChild(newListItemImg);
       newListItem.appendChild(newListItemName);
       newListItem.appendChild(newListItemPrice);
-      
+      newListItem.appendChild(removeItem);
+      //change number of items counter
+      const numOfItemsInCart = document.querySelector('.cart-btn span');
+      const numOfItemsInCart2 = document.querySelector('.cart-items-title span');
+      numOfItemsInCart.innerHTML = itemCounter;
+      numOfItemsInCart2.innerHTML = itemCounter2;
+      //Pricing Stuff
+      const priceValue = parseFloat(cardPrice);
+      const currentTotal = document.querySelector('.total');
+      const total = parseFloat(currentTotal.innerHTML);
+      const newTotal = priceValue + total;
+
+      currentTotal.innerHTML = newTotal.toFixed(2);;
       
 
+
+
+
+      removeItem.addEventListener('click', function(){
+        removeItem.parentElement.remove();
+        itemCounter--;
+        itemCounter2--;
+        numOfItemsInCart.innerHTML = itemCounter;
+        numOfItemsInCart2.innerHTML = itemCounter2;
+
+        currentTotal.innerHTML = (newTotal - priceValue).toFixed(2);
+
+      })
+      
     })
+    
   })
 }
 addToCart();

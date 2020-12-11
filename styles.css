@@ -56,8 +56,9 @@ html{
     cursor: pointer;
     font-size: 24px;
 }
-.cart-btn span{
+#num-of-items{
     color: crimson;
+    padding: 5px;
 }
 .cartbtn{
     width: 100%;
@@ -96,10 +97,18 @@ html{
     width: 500px;
     height: 500px;
     background-color: rgb(34, 34, 34);
+    overflow-x: hidden;
 }
 .total{
     font-size: 32px;
     color: white;
+}
+.removebtn{
+    background-color: white;
+    color: x;
+    text-align: center;
+    font-size: 24px;
+    padding: 0px 9px;
 }
 #checkoutbtn{
     border: none;
