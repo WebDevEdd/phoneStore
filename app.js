@@ -621,7 +621,7 @@ function addToCart(){
         numOfItemsInCart2.innerHTML = itemCounter2;
 
         currentTotal.innerHTML = (newTotal - priceValue).toFixed(2);
-
+        
       })
       
     })
